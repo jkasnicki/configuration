@@ -1,0 +1,62 @@
+" .vimrc
+set nocompatible       " Get out of vi-compatible mode
+set nowrap             " Don't wrap long lines
+set autoindent         " Do auto-indenting
+set nocindent          " But not C style indenting
+set backspace=2        " allow backspacing over everything in insert mode
+set showmatch          " always set showmatch on
+set incsearch          " Highlight phrases as you search
+set expandtab          " Use spaces instead of tabs
+set softtabstop=2      " Use spaces instead of tabs
+set tabstop=2          " Same size as above
+set shiftwidth=2       " Same size as above
+set backup		         " keep a backup file (defaults to .filename~)
+set history=500        " keep 500 lines of command line history
+set ruler              " show the cursor position all the time
+set number             " Print line numbers
+set ignorecase         " Ignore Case sensitivity in searches
+set whichwrap+=<,>,h,l " allow cursors to cross line boundaries
+set scrolloff=4        " Always keep lines above and below the cursor
+filetype on            " detect the type of file
+filetype indent on     " And indent
+set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 lines of registers
+syntax on              " syntax highlighting on
+set hlsearch           " highlight the last search
+set vb                 " no bell in gvim
+set columns=80
+set lines=36
+
+" Highlight whitespace
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+if has("autocmd")
+    autocmd BufNewFile,BufRead Makefile set noexpandtab " Makefiles ensure that we don't expand tabs since tabs are special
+    " autocmd FileType python set noexpandtab
+endif
+
+" to clear hlsearch -- hit ,h to clear highlighting from last search
+map ,h :nohlsearch <CR>
+
+"map! <C-l> <right>
+map! <C-k> <up>
+map! <C-j> <down>
+"map! <C-h> <left>
+
+" lhs comments -- select a range then hit ,# to insert hash comments
+" or ,/ for // comments, or ,c to clear comments.
+map ,# :s/^/#/<CR> <Esc>:nohlsearch <CR>
+map ,/ :s/^/\/\//<CR> <Esc>:nohlsearch <CR>
+map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR> <Esc>:nohlsearch<CR>
+map <CR> O<Esc>j
+map <SPACE> i<SPACE><Esc>l
+
+" wrapping comments -- select a range then hit ,* to put  /* */ around
+" selection, or ,d to clear them
+" map ,* :s/^\(.*\)$/\/\* \1 \*\//<CR> <Esc>:nohlsearch<CR>
+" map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR> <Esc>:nohlsearch<CR>
+
+map <TAB> i<TAB>

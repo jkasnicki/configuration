@@ -1,0 +1,13 @@
+# The following should be in .bashrc
+#if [ -f ~/.bash_aliases ]; then
+    #. ~/.bash_aliases
+#fi
+
+alias clean='rm -f *~ *.class *.pyc'
+alias pylint='pylint --indent-string="  " -i y -r n --disable=W0511'
+alias which='type'
+
+# Git aliases
+alias gitd='git diff'
+alias gits='git status'
+alias gitb='git branch'

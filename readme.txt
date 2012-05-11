@@ -1,6 +1,3 @@
-configuration
-=============
-
 My Personal Configuration Repo
 
 http://help.github.com/linux-set-up-git/
