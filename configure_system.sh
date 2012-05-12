@@ -1,13 +1,14 @@
 #!/bin/bash
 
-if [ -f ~/.bash_aliases ]; then
-  echo "Not overwriting bash_aliases"
-else
-  cp configs/dot_bash_aliases ~/.bash_aliases
-fi
+function copy_config {
+  name=$1
+  if [ -f ~/.${name} ]; then
+    echo "Not overwriting ~/.${name}"
+  else
+    cp configs/dot_${name} ~/.${name}
+  fi
+}
 
-if [ -f ~/.vimrc ]; then
-  echo "Not overwriting vimrc"
-else
-  cp configs/dot_vimrc ~/.vimrc
-fi
+copy_config bash_aliases
+copy_config vimrc
+copy_config pylintrc

@@ -4,7 +4,6 @@
 #fi
 
 alias clean='rm -f *~ *.class *.pyc'
-alias pylint='pylint --indent-string="  " -i y -r n --disable=W0511'
 alias which='type'
 
 # Git aliases
