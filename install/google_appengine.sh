@@ -2,7 +2,7 @@
 
 # See: https://developers.google.com/appengine/downloads
 
-VERSION=1.6.5
+VERSION=1.7.1
 
 if [ -d /opt/google_appengine ]; then
   echo "ERROR: Not overwriting existing installation"
