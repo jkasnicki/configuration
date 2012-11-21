@@ -1,6 +1,3 @@
 #!/bin/bash
 
-# TODO: Install gvmi
-
-# Install tkdiff
-sudo apt-get install tkdiff
+sudo apt-get install vim tkdiff curl
