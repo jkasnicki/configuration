@@ -12,3 +12,4 @@ function copy_config {
 copy_config bash_aliases
 copy_config vimrc
 copy_config pylintrc
+copy_config gitconfig
