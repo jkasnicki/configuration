@@ -24,7 +24,7 @@ syntax on              " syntax highlighting on
 set hlsearch           " highlight the last search
 set vb                 " no bell in gvim
 set columns=80
-set lines=36
+" set lines=36
 
 " Highlight whitespace
 highlight ExtraWhitespace ctermbg=yellow guibg=yellow
