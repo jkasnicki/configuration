@@ -23,6 +23,7 @@ set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 li
 syntax on              " syntax highlighting on
 set hlsearch           " highlight the last search
 set vb                 " no bell in gvim
+set background=light
 set columns=80
 " set lines=36
 
